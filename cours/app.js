@@ -17,32 +17,46 @@ const fs = require("fs");
 // console.log("Détails du chemin:", detailsChemin);
 // console.log("Chemin normalisé:", cheminNormalise);
 
-fs.mkdir("./user/documents/nouveau-repertoire/", (err) => {
+const cheminFichier = path.join(".",'user','nouveau-repertoire', 'fichier.txt')
+const cheminAbsolu = path.resolve(cheminFichier)
+const repertoire = path.dirname(cheminAbsolu)
+fs.mkdir(repertoire, (err) => {
   if (err) throw err;
   console.log("répertoire créer avec succès");
+
+  fs.writeFile(
+    cheminAbsolu,
+    "lalalala2",
+    "utf8",
+    (err) => {
+      if (err) throw err;
+      console.log("Le fichier a été enregistré");
+
+      fs.readFile(
+        cheminAbsolu,
+        "utf8",
+        (err, data) => {
+          if (err) throw err;
+          console.log(data);
+          fs.readdir(repertoire, (err, files) => {
+            if (err) throw err;
+            console.log("Contenu du répertoire : ", files);
+
+            fs.unlink(
+              cheminAbsolu,
+              (err) => {
+                if (err) throw err;
+                console.log("Fichier supprimé avec succès!");
+
+                fs.rmdir(repertoire, (err) => {
+                  if (err) throw err;
+                  console.log("Répertoire supprimé avec succès!");
+                });
+              }
+            );
+          });
+        }
+      );
+    }
+  );
 });
-
-fs.writeFile("./user/documents/nouveau-repertoire/fichier.txt", "lalalala2", "utf8", (err) => {
-  if (err) throw err;
-  console.log("Le fichier a été enregistré");
-});
-
-fs.readFile("./user/documents/nouveau-repertoire/fichier.txt", "utf8", (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
-
-fs.readdir("./user/documents/nouveau-repertoire/", (err, files) => {
-  if (err) throw err;
-  console.log("Contenu du répertoire : ", files);
-})
-
-fs.unlink("./user/documents/nouveau-repertoire/fichier.txt", (err) => {
-  if (err) throw err;
-  console.log("Fichier supprimé avec succès!");
-})
-
-fs.rmdir("./user/documents/nouveau-repertoire/", (err) => {
-  if (err) throw err;
-  console.log("Répertoire supprimé avec succès!");
-})
