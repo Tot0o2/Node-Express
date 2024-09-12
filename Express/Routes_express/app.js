@@ -5,7 +5,7 @@ const PORT = 3000
 
 const mainRouter = require("./src/routes/router")
 
-app.use(express.static('views'))
+app.use(express.static('public'))
 app.use('/', mainRouter)
 
 app.listen(PORT, () => {

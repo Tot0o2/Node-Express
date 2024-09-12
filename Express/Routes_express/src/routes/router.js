@@ -1,28 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send()
-})
+const firstController = require('../controllers/firstController')
 
-router.get('/bienvenue', (req, res) => {
-  res.send('<h1>Bienvenue sur la page de bienvenue')
-})
+router.get('/', firstController.homePage)
 
-router.get('/info', (req, res) => {
-  res.json({name: 'Thomas', age: 22})
-})
+router.get('/bienvenue', firstController.bienvenuePage)
 
-router.get('/redirection-acceuil', (req, res) => {
-  res.redirect('/')
-})
+router.get('/info', firstController.infoPage)
 
-router.get('/acces-interdit', (req, res) => {
-  res.status(403).send('403 - Acces denied')
-})
+router.get('/redirection-acceuil', firstController.redirect)
 
-router.get('*', (req, res) => {
-  res.status(404).send('404 - Page non trouvée')
-})
+router.get('/acces-interdit', firstController.forbiddenPage)
+
+router.get('*', firstController.badRoute)
 
 module.exports = router
