@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Inception",
+    "description": "A skilled thief is given a chance at redemption if he can successfully perform inception on a target's subconscious.",
+    "director": "Christopher Nolan",
+    "releaseDate": "2010-07-16"
+  },
+  {
+    "title": "The Matrix",
+    "description": "A hacker discovers that the world around him is a simulation and joins a rebellion to overthrow its controllers.",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "releaseDate": "1999-03-31"
+  },
+  {
+    "title": "Interstellar",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "director": "Christopher Nolan",
+    "releaseDate": "2014-11-07"
+  },
+  {
+    "title": "Pulp Fiction",
+    "description": "The lives of two mob hitmen, a boxer, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "director": "Quentin Tarantino",
+    "releaseDate": "1994-10-14"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "director": "Frank Darabont",
+    "releaseDate": "1994-09-23"
+  },
+  {
+    "title": "The Godfather",
+    "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "director": "Francis Ford Coppola",
+    "releaseDate": "1972-03-24"
+  },
+  {
+    "title": "Fight Club",
+    "description": "An insomniac office worker and a soap salesman form an underground fight club that evolves into much more.",
+    "director": "David Fincher",
+    "releaseDate": "1999-10-15"
+  },
+  {
+    "title": "The Dark Knight",
+    "description": "When the menace known as the Joker emerges, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "director": "Christopher Nolan",
+    "releaseDate": "2008-07-18"
+  }
+]
